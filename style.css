@@ -11,10 +11,11 @@
 body{
     user-select: none;
     overflow: hidden;
+    font-family: 'MuseoModerno', cursive;
+    /*transform:  translateY(100vh) rotate(180deg) ;*/
 }
 .container{
     position: absolute;
-    z-index: 2;
     width: 100vw;
     height: 100vh;
     background-color: #1D1340;
@@ -35,13 +36,14 @@ nav{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 4;
 }
 header{
     position: absolute;
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-
+    transition: transform 1s ease;
 }
 .ham{
     cursor: pointer;
@@ -53,6 +55,7 @@ header{
     margin: 5px 0;
 }
 main{
+    z-index: 4;
     position: absolute;
     top: 0;
     left: 50%;
@@ -65,6 +68,7 @@ main{
     margin-bottom: 100px;
 }
 .inp__txt{
+
     width: 50vh;
     height: 50px;
     font-size: 2rem;
@@ -80,19 +84,27 @@ main{
     border: 4px solid var(--border);
     outline: none;
 }
+.cutTxt{
+    margin-right: 2px;
+}
 .span{
     position: absolute;
     font-size: 2rem;
-    color: #000;
-    z-index: -1;
+    color: #fff;
+    z-index: 3;
 }
 .char1{
     top: 0;
     left: 0;
 }
 .char2{
-    left: 35%;
-    top: 49%;
+    top: 12%;
+    right: -100vw;
+    transition: transform 1s ease;
+}
+.char3{
+    left: 45%;
+    top: 51%;
     transform: translate(-50%,-50%);
 }
 .char4{
@@ -110,10 +122,10 @@ footer {
     position: absolute;
     bottom: 50px;
     left: 50px;
+    z-index: 4;
+    background-color: var(--bgcolor);
 }
 .social__element{
-    width: 70px;
-    height: 70px;
     border: 2px solid #616F8C;
     position: relative;
     border-radius: 50%;
@@ -141,7 +153,7 @@ footer {
 }
 .menu{
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     top: 50%;
     left: 50%;
     background-color: #fff;
