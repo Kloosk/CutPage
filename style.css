@@ -44,6 +44,7 @@ header{
     left: 50%;
     transform: translateX(-50%);
     transition: transform 1s ease;
+    cursor: pointer;
 }
 .ham{
     cursor: pointer;
@@ -68,7 +69,6 @@ main{
     margin-bottom: 100px;
 }
 .inp__txt{
-
     width: 50vh;
     height: 50px;
     font-size: 2rem;
@@ -104,12 +104,21 @@ main{
 }
 .char3{
     left: 45%;
-    top: 51%;
-    transform: translate(-50%,-50%);
+    top: 0;
+    transform: translate(-50%,50vh);
+    transition: transform 1.5s 0.9s ease;
 }
 .char4{
-    bottom: 45px;
-    left: 45px;
+    bottom: 23px;
+    left: 139px;
+}
+.copyright{
+    font-size: 1.2rem;
+    color: #616F8C;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
 }
 footer {
     position: fixed;
@@ -118,30 +127,35 @@ footer {
     font-size: 0.7rem;
     color: #ffffff;
 }
-.social{
+.footer__social{
     position: absolute;
-    bottom: 50px;
-    left: 50px;
+    bottom: 7px;
+    left: 5px;
     z-index: 4;
-    background-color: var(--bgcolor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.social__element{
+.footer__social__element{
+    width: 70px;
+    height: 70px;
+    margin: 0 12px;
     border: 2px solid #616F8C;
     position: relative;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.2s ease;
 }
-.social__element:hover{
+.footer__social__element:hover{
     transform: scale(1.1);
     border: 2px solid #BF1736;
     box-shadow: 0 0 15px #BF1736;
 }
-.social__element:hover .icon{
+.footer__social__element:hover .footer__icon{
     color: #BF1736;
     text-shadow: 0 0 5px #BF1736;
 }
-.icon{
+.footer__icon{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -152,8 +166,8 @@ footer {
     height: 40px;
 }
 .menu{
-    width: 50px;
-    height: 40px;
+    width: 100px;
+    height: 60px;
     position: absolute;
     z-index: 5;
     top: 50%;
@@ -169,7 +183,7 @@ footer {
 .win{
     z-index: 10;
     position: absolute;
-    top: 0;
+    top: 101vh;
     left: 0;
     width: 102vw;
     height: 102vh;
@@ -177,6 +191,5 @@ footer {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    transform: translateY(101vh);
     transition: transform 2s 0.9s ease;
 }

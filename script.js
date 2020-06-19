@@ -6,8 +6,6 @@ let win = document.querySelector(".win");
 let cutTxt = document.querySelector(".cutTxt");
 let header = document.querySelector("header");
 let char2 = document.querySelector(".char2");
-let nav = document.querySelector("nav");
-let bodyRotate = document.querySelector("body");
 
 let animeStart = false;
 let currentCut = 0;
@@ -20,8 +18,6 @@ const anime = () => {
         animeStart = !animeStart;
         animeStart ? win.style.transform = `translate(0vw,0vh)` : win.style.transform = `translate(-0.5vw,-0.5vh)`;
     },500)
-
-
 };
 const hacker = () => {
     let inpVal = inp.value.toLowerCase();
@@ -43,9 +39,6 @@ const hacker = () => {
         inp.style.transform = `rotate(10deg)`;
     }
 };
-nav.addEventListener("click",() => {
-   bodyRotate.style.transform = `translateY(100vh) rotate(180deg) `;
-},{once:true});
 char2.addEventListener("click",() => {
     char2.style.transform =  `translateX(-150vw) rotate(360deg)`;
 }, {once : true});
