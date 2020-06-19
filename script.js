@@ -1,5 +1,4 @@
 // disintegrate.init();
-let cut = document.querySelector(".cut");
 let menu = document.querySelector(".menu");
 let inp = document.querySelector(".inp__txt");
 let main = document.querySelector("main");
@@ -36,6 +35,13 @@ const hacker = () => {
             },2500)
         },2500);
     }
+    else{
+        inp.value = "";
+        paddingInp = 60;
+        rotateInp = 10;
+        inp.style.paddingLeft = `60%`;
+        inp.style.transform = `rotate(10deg)`;
+    }
 };
 nav.addEventListener("click",() => {
    bodyRotate.style.transform = `translateY(100vh) rotate(180deg) `;
@@ -63,17 +69,9 @@ document.addEventListener("contextmenu",e => {
 });
 let rotateInp = 10; // deg
 let paddingInp = 60; //%
-inp.addEventListener("keydown",e => {
-    if((e.key === "Backspace") && (rotateInp > 10)){
-        console.log(inp.value.length);
-        paddingInp -= 10;
-        rotateInp -= 20;
-        inp.style.paddingLeft = `${paddingInp}%`;
-        inp.style.transform = `rotate(${rotateInp}deg)`;
-    }
-});
-inp.addEventListener("keyup",() => {
-    if(rotateInp < 90) {
+inp.addEventListener("keyup",e => {
+    console.log(e);
+    if((e.key !== "Backspace") && (rotateInp < 90)) {
         paddingInp += 10;
         rotateInp += 20;
         inp.style.paddingLeft = `${paddingInp}%`;
@@ -82,8 +80,23 @@ inp.addEventListener("keyup",() => {
             hacker();
         }
     }
+    else if((e.key === "Backspace") && (rotateInp > 10)){
+        paddingInp -= 10;
+        rotateInp -= 20;
+        inp.style.paddingLeft = `${paddingInp}%`;
+        inp.style.transform = `rotate(${rotateInp}deg)`;
+    }
 });
-cut.addEventListener("click",() => {
+inp.addEventListener("keydown",e => {
+    if((e.key === "Backspace") && (rotateInp > 10)){
+        paddingInp -= 10;
+        rotateInp -= 20;
+        inp.style.paddingLeft = `${paddingInp}%`;
+        inp.style.transform = `rotate(${rotateInp}deg)`;
+    }
+});
+
+menu.addEventListener("click",() => {
     console.log(eve.target.parentElement);
     // const disObj = disintegrate.getDisObj(eve.target);
     // disintegrate.createSimultaneousParticles(disObj);

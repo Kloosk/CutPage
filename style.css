@@ -152,6 +152,8 @@ footer {
     height: 40px;
 }
 .menu{
+    width: 50px;
+    height: 40px;
     position: absolute;
     z-index: 5;
     top: 50%;
