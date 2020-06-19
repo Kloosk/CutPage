@@ -1,4 +1,3 @@
-// disintegrate.init();
 let menu = document.querySelector(".menu");
 let inp = document.querySelector(".inp__txt");
 let main = document.querySelector("main");
@@ -10,6 +9,7 @@ let char2 = document.querySelector(".char2");
 let animeStart = false;
 let currentCut = 0;
 let eve;
+
 const anime = () => {
    win.style.transitionDuration = "0s";
    win.style.transitionDelay = "0s";
@@ -78,8 +78,6 @@ inp.addEventListener("keyup",e => {
     }
 });
 menu.addEventListener("click",() => {
-    // const disObj = disintegrate.getDisObj(eve.target);
-    // disintegrate.createSimultaneousParticles(disObj);
     eve.target.parentElement.remove();
     currentCut++;
     cutTxt.innerText = `Current cut: ${currentCut}`;
