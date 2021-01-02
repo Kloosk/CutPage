@@ -106,10 +106,8 @@ main{
     transition: transform 1s ease;
 }
 .char3{
-    top: 0;
-    left: 50%;
-    transform: translate(-50%,50vh);
-    transition: transform 1.5s 0.9s ease;
+    top: 50vh;
+    left: 40%;
 }
 .char4{
     bottom: 23px;
